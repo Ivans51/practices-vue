@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <!--<p>{{nameUser}}</p>
     <h2>{{myDetails()}}</h2>
     <div class="alert alert-info">
@@ -17,21 +17,21 @@
         &lt;!&ndash;<li v-on="click toggle(item)">Trigger Event</li>&ndash;&gt;
       </ul>
     </div>-->
-    <home-header></home-header>
+    <home-top v-bind:items="items"></home-top>
     <router-view></router-view>
-    <home-footer></home-footer>
+    <home-bottom></home-bottom>
   </div>
 </template>
 
 <script>
-  import homeHeader from './../home/HomeHeader';
-  import homeFooter from './../home/HomeFooter';
+  import homeTop from './HomeTop';
+  import homeBottom from './HomeBottom';
 
   export default {
     name: "Home",
     components: {
-      homeHeader,
-      homeFooter
+      homeTop,
+      homeBottom
     },
     data() {
       return {
@@ -40,8 +40,9 @@
         key: 12,
         n: 0,
         items: [
-          {nameFruit: "Orange", sell: "20000", done: false},
-          {nameFruit: "Apple", sell: "14000", done: true}
+          {name: "Learn", sell: "20000", done: false},
+          {name: "Community", sell: "14000", done: true},
+          {name: "Try", sell: "14000", done: true}
         ]
       }
     },
@@ -68,6 +69,8 @@
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .home {
+    position: relative;
+  }
 </style>

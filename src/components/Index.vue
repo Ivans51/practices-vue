@@ -5,14 +5,11 @@
 </template>
 
 <script>
-  import homeHeader from './home/HomeHeader';
-  import homeFooter from './home/HomeFooter';
   export default {
     name: 'Index',
     data() {
       return {
-        title: "Ir al home",
-        hreflink: "http://www.google.com"
+        title: "Ir al home"
       }
     }
   }

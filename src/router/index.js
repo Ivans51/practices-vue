@@ -5,8 +5,8 @@ import Index from '@/components/index';
 import Home from '@/components/home/Home';
 import Community from '@/components/Community';
 import Learn from '@/components/Learn';
-import Search from '@/components/Search';
-import Try from '@/components/Try';
+import Search from '@/components/search/Search';
+import Try from '@/components/try/Try';
 // const Home = r => require.ensure([], () => r(require('@/components/home/Home')), 'grupo-SuperSu')
 const Error404 = r => require.ensure([], () => r(require('@/components/Error404')), 'grupo-SuperSu')
 

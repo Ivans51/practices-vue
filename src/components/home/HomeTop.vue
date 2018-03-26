@@ -6,12 +6,10 @@
           <img src="/static/img/logo-kotlin.png" alt="logo-kotlin">
         </router-link>
         <nav class="d-flex align-items-center ml-auto">
-          <div class="navigation">
-            <router-link to="/Home/Learn" tag="a">Learn</router-link>
-            <router-link to="/Home/Community" tag="a">Community</router-link>
-            <router-link to="/Home/Try" tag="a">Try</router-link>
+          <div class="navigation mr-2" v-for="item in items">
+            <router-link v-on:click="deleteHead" :to="'/Home/' + item.name" tag="a">{{item.name}}</router-link>
           </div>
-          <router-link to="/Search" class="">
+          <router-link to="/Home/Search" class="">
             <img src="/static/img/icon-search.png" alt="image-search" class="ml-3">
           </router-link>
         </nav>
@@ -22,7 +20,18 @@
 
 <script>
   export default {
-    name: "header"
+    name: "HomeTop",
+    props: {
+      items: {
+        type: Array,
+        required: true
+      }
+    },
+    methods: {
+      deleteHead: function () {
+        this.items.pop();
+      }
+    }
   }
 </script>
 
@@ -32,7 +41,7 @@
   header {
     cursor: default;
     background-image: $image-home;
-    height: 400px;
+    height: 200px;
     .container-menu {
       height: 50px;
       background: $color-secondary;

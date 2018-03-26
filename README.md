@@ -1,6 +1,6 @@
-# prueba
+# VUE
 
-> Mi super proyecto arrehisimo
+> Test VUE.js
 
 ## Build Setup
 
